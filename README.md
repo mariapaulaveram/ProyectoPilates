@@ -52,17 +52,7 @@ React Router DOM
 Clonar el repositorio:
 
 bash
-git clone https://github.com/usuario/pilates-studio.git
-Instalar dependencias en backend y frontend:
-
-bash
-cd backend
-npm install
-cd ../frontend
-npm install
-Configurar variables de entorno en el backend (.env) para conexión a MySQL y JWT.
-
-Levantar ambos servidores:
+git clone https://github.com/mariapaulaveram/ProyectoPilates
 
 Backend: npm start
 

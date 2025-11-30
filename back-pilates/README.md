@@ -30,7 +30,7 @@ Se conecta a una base de datos **MySQL** mediante un pool de conexiones.
 
 ## Pasos para correr el servidor
 ### Clonar el repositorio
-git clone https://github.com/mariapaulaveram/back-pilates
+git clone https://github.com/mariapaulaveram/ProyectoPilates/tree/main/back-pilates
 cd back-pilates
 
 ### Instalar dependencias

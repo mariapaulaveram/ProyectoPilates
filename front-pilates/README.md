@@ -20,7 +20,7 @@ Este proyecto es la interfaz web del sistema de gestión de clases de Pilates. D
 
 ## Pasos para correr el proyecto en modo desarrollo
 ### Clonar el repositorio
-git clone https://github.com/mariapaulaveram/front-pilates
+git clone https://github.com/mariapaulaveram/ProyectoPilates/tree/main/front-pilates
 cd front-pilates
 
 ### Instalar dependencias
