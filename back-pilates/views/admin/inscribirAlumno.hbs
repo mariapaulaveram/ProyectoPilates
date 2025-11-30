@@ -1,0 +1,38 @@
+<h3 class="mb-4">Inscribir Alumno a una Clase</h3>
+
+{{#if error}}
+  <div class="alert alert-danger">{{mensaje}}</div>
+{{/if}}
+
+
+<form method="POST" action="/admin/verInscriptos/inscribirAlumno" class="bg-light p-4 rounded shadow-sm">
+
+  <div class="mb-3">
+    <label for="id_alumno" class="form-label">ID del Alumno (DNI)</label>
+    <input type="number" name="id_alumno" id="id_alumno" class="form-control" placeholder="Ej: 12345678" required>
+  </div>
+
+  <div class="mb-3">
+    <label for="id_clase" class="form-label">Clase disponible</label>
+    {{#if clases.length}}
+      <select name="id_clase" id="id_clase" class="form-select" required>
+        <option value="">Seleccionar clase</option>
+        {{#each clases}}
+          <option value="{{id}}">
+            {{dia}} - {{hora}} - {{profesor}} (Cupo: {{cupo_disponible}})
+          </option>
+        {{/each}}
+      </select>
+    {{else}}
+      <div class="alert alert-warning">No hay clases disponibles con cupo.</div>
+    {{/if}}
+  </div>
+
+  <div class="text-end">
+    <button type="submit" class="btn btn-primary">
+      <i class="fa fa-check"></i> Inscribir
+    </button>
+    <a href="/admin/verInscriptos" class="btn btn-secondary ms-2">Cancelar</a>
+  </div>
+</form>
+

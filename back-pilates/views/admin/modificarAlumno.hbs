@@ -1,0 +1,47 @@
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="/admin/clases">Ver Clases</a></li>
+    <li><a href="/admin/verAlumnos">Alumnos</a></li>
+    <li><a href="/admin/verInscriptos">Inscriptos</a></li>
+    <li><a href="/admin/inicio">Inicio</a></li>
+  </ul>
+
+  <div class="usuarioHeader">
+    <span>Hola {{persona}}!</span>
+    <a class="btn btn-teal" href="/admin/login/logout">
+      Cerrar Sesión <i class="fas fa-sign-out-alt"></i>
+    </a>
+  </div>
+</nav>
+
+<div class="container" style="margin: 100px auto">
+  <div class="row">
+    <div class="col-6 offset-3">
+        <h4>Modificar Alumno</h4>
+        <form action="/admin/verAlumnos/modificar" method="post">
+            <input type="hidden" name="id" value="{{alumno.id}}">
+    
+            <div class="row mb-3">
+                <input type="text" class="form-control" name="nombre" value="{{alumno.nombre}}" placeholder="Nombre">
+            </div>
+            <div class="row mb-3">
+                <input type="text" class="form-control" name="apellido" value="{{alumno.apellido}}" placeholder="Apellido">
+            </div>
+            <div class="row mb-3">
+                <input type="text" class="form-control" name="email" value="{{alumno.email}}" placeholder="Email">
+            </div>
+    
+            <button type="submit" class="btn btn-secondary">Guardar</button>
+        </form>
+
+        {{#if mensajeExito}}
+        <p>{{mensajeExito}}</p>
+        {{/if}}
+        
+        {{#if error}}
+        <p>{{mensaje}}</p>
+        {{/if}}
+        
+        </div>
+        </div>
+        </div>

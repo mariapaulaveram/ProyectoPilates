@@ -1,0 +1,56 @@
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="/admin/clases">Ver Clases</a></li>
+    <li><a href="/admin/verAlumnos">Alumnos</a></li>
+    <li><a href="/admin/verInscriptos">Inscriptos</a></li>
+    <li><a href="/admin/inicio">Inicio</a></li>
+  </ul>
+
+  <div class="usuarioHeader">
+    <span>Hola {{persona}}!</span>
+    <a class="btn btn-teal" href="/admin/login/logout">
+      Cerrar Sesión <i class="fas fa-sign-out-alt"></i>
+    </a>
+  </div>
+</nav>
+
+<div class="container" style="margin: 100px auto">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <h4>Modificar Clases</h4>
+            <form action="/admin/clases/modificar" method="post">
+                <input type="hidden" name="id" value="{{clase.id}}">
+
+                <div class="row mb-3">
+                    <select class="form-control" name="dia" required>
+                        <option value="">Seleccionar día</option>
+                        <option value="lunes" {{#ifEquals clase.dia "lunes" }}selected{{/ifEquals}}>lunes</option>
+                        <option value="martes" {{#ifEquals clase.dia "martes" }}selected{{/ifEquals}}>martes</option>
+                        <option value="miercoles" {{#ifEquals clase.dia "miercoles" }}selected{{/ifEquals}}>miercoles</option>
+                        <option value="jueves" {{#ifEquals clase.dia "jueves" }}selected{{/ifEquals}}>jueves</option>
+                        <option value="viernes" {{#ifEquals clase.dia "viernes" }}selected{{/ifEquals}}>viernes</option>
+                        <option value="sabado" {{#ifEquals clase.dia "sabado" }}selected{{/ifEquals}}>sabado</option>
+                    </select>
+                </div>
+
+                <div class="row mb-3">
+                    <input type="time" class="form-control" name="hora" value="{{clase.hora}}">
+                </div>
+                <div class="row mb-3">
+                    <input type="number" class="form-control" name="cupo" value="{{clase.cupo}}">
+                </div>
+                <div class="row mb-3">
+                    <input type="number" class="form-control" name="cupo_disponible" value="{{clase.cupo_disponible}}">
+                </div>
+                <div class="row mb-3">
+                    <input type="text" class="form-control" name="profesor" value="{{clase.profesor}}">
+                </div>
+
+                <button type="submit" class="btn btn-secondary">Guardar</button>
+            </form>
+            {{#if error}}
+        <p>{{mensaje}}</p>
+        {{/if}}
+        </div>
+        </div>
+        </div>

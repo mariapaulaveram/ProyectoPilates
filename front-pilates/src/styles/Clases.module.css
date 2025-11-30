@@ -1,0 +1,28 @@
+.tablaHorizontal {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.tablaHorizontal th {
+  background-color: #1a1a1a;
+  color:whitesmoke;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+.tablaHorizontal td {
+  padding: 1rem;
+  vertical-align: top;
+  border: 1px solid #ddd;
+  min-width: 120px;
+}
+
+.claseItem {
+  margin-bottom: 1rem;
+}
+
+.sinClase {
+  color: #aaa;
+  font-style: italic;
+}

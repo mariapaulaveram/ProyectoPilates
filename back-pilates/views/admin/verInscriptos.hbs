@@ -1,0 +1,142 @@
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="/admin/clases">Ver Clases</a></li>
+    <li><a href="/admin/verAlumnos">Alumnos</a></li>
+    <li><a href="/admin/verInscriptos">Inscriptos</a></li>
+    <li><a href="/admin/inicio">Inicio</a></li>
+  </ul>
+
+  <div class="usuarioHeader">
+    <span>Hola {{persona}}!</span>
+    <a class="btn btn-teal" href="/admin/login/logout">
+      Cerrar Sesión <i class="fas fa-sign-out-alt"></i>
+    </a>
+  </div>
+</nav>
+
+<form method="GET" action="/admin/verInscriptos" class="bg-light p-3 rounded shadow-sm mb-4">
+  <div class="row g-3 align-items-end">
+    <div class="col-md-4">
+      <label for="profesor" class="form-label">Profesor</label>
+      <select name="profesor" id="profesor" class="form-select" onchange="this.form.submit()">
+        <option value="" {{#unless profesorSeleccionado}}selected{{/unless}}>Todos</option>
+        <option value="Prof. Maria" {{#ifCond profesorSeleccionado '==' 'Prof. Maria' }}selected{{/ifCond}}>Prof. Maria</option>
+        <option value="Prof. Pereza" {{#ifCond profesorSeleccionado '==' 'Prof. Pereza' }}selected{{/ifCond}}>Prof. Pereza</option>
+        <option value="Prof. Juan" {{#ifCond profesorSeleccionado '==' 'Prof. Juan' }}selected{{/ifCond}}>Prof. Juan</option>
+        <option value="Prof. Garcia" {{#ifCond profesorSeleccionado '==' 'Prof. Garcia' }}selected{{/ifCond}}>Prof. Garcia</option>
+        <option value="Prof. Juana" {{#ifCond profesorSeleccionado '==' 'Prof. Juana' }}selected{{/ifCond}}>Prof. Juana</option>
+      </select>
+    </div>
+
+    <div class="col-md-4">
+      <label for="dia" class="form-label">Día</label>
+      <select name="dia" id="dia" class="form-select" onchange="this.form.submit()">
+        <option value="" {{#unless diaSeleccionado}}selected{{/unless}}>Todos</option>
+        <option value="lunes" {{#ifCond diaSeleccionado '==' 'lunes' }}selected{{/ifCond}}>Lunes</option>
+        <option value="martes" {{#ifCond diaSeleccionado '==' 'martes' }}selected{{/ifCond}}>Martes</option>
+        <option value="miercoles" {{#ifCond diaSeleccionado '==' 'miercoles' }}selected{{/ifCond}}>Miércoles</option>
+        <option value="jueves" {{#ifCond diaSeleccionado '==' 'jueves' }}selected{{/ifCond}}>Jueves</option>
+        <option value="viernes" {{#ifCond diaSeleccionado '==' 'viernes' }}selected{{/ifCond}}>Viernes</option>
+        <option value="sabado" {{#ifCond diaSeleccionado '==' 'sabado' }}selected{{/ifCond}}>Sábado</option>
+      </select>
+    </div>
+
+    <div class="col-md-4 text-end">
+      <a href="/admin/verInscriptos" class="btn btn-outline-secondary">Limpiar filtros</a>
+    </div>
+  </div>
+</form>
+
+<div class="container" style="margin-top: 50px;">
+  <div class="row mb-4 align-items-center">
+    <div class="col-md-8">
+      <h3>Listado de Inscriptos</h3>
+
+      {{#if inscripcion}}
+      <div class="alert alert-success mt-3 inscripcion-mensaje">
+        ✅ El alumno fue inscripto correctamente.
+      </div>
+      {{/if}}
+      
+      {{#if eliminado}}
+      <div class="alert alert-danger mt-3 inscripcion-mensaje">
+        🗑️ La inscripción fue eliminada correctamente.
+      </div>
+      {{/if}}
+      
+      </div>
+      <div class="col-md-4 text-end">
+        <a class="btn btn-dark" href="/admin/verInscriptos/inscribirAlumno">
+        <i class="fa fa-plus" aria-hidden="true"></i> Inscribir Alumno
+      </a>
+    </div>
+  </div>
+
+  {{#if inscripcionesPorDia}}
+    {{#each inscripcionesPorDia}}
+      {{#if inscripciones.length}}
+        <h4 class="mt-4">{{dia}}</h4>
+        <table class="table tablaInscripciones">
+          <thead>
+            <tr>
+              <th>Alumno</th>
+              <th>Email</th>
+              <th>Profesor</th>
+              <th>Día</th>
+              <th>Hora</th>
+              <th class="text-end">Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each inscripciones}}
+              <tr>
+                <td>{{nombre_alumno}} {{apellido_alumno}}</td>
+                <td>{{email}}</td>
+                <td>{{profesor}}</td>
+                <td>{{dia}}</td>
+                <td>{{hora}}</td>
+                <td class="text-end accionesClases">
+                  <a href="javascript:void(0)" class="iconoAccion"
+                    onclick="confirmarEliminacionInscripcion({{id}}, '{{nombre_alumno}}', '{{apellido_alumno}}')">
+
+                    <i class="fa-solid fa-trash"></i>
+                  </a>
+                </td>
+              </tr>
+              {{/each}}
+              </tbody>
+              </table>
+      {{/if}}
+    {{/each}}
+  {{else}}
+    <p class="text-center">No hay inscripciones registradas.</p>
+  {{/if}}
+</div>
+
+<script>
+  setTimeout(() => {
+    const mensaje = document.querySelector('.inscripcion-mensaje');
+    if (mensaje) mensaje.style.display = 'none';
+  }, 5000); // Oculta el mensaje después de 5 segundos
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  function confirmarEliminacionInscripcion(id, nombre, apellido) {
+    Swal.fire({
+      title: '¿Eliminar inscripción?',
+      html: `<strong>${nombre} ${apellido}</strong> será eliminado de la clase.`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = `/admin/verInscriptos/eliminar/${id}`;
+      }
+    });
+  }
+</script>
+

@@ -1,0 +1,83 @@
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="/admin/clases">Ver Clases</a></li>
+    <li><a href="/admin/verAlumnos">Alumnos</a></li>
+    <li><a href="/admin/verInscriptos">Inscriptos</a></li>
+    <li><a href="/admin/inicio">Inicio</a></li>
+  </ul>
+
+  <div class="usuarioHeader">
+    <span>Hola {{persona}}!</span>
+    <a class="btn btn-teal" href="/admin/login/logout">
+      Cerrar Sesión <i class="fas fa-sign-out-alt"></i>
+    </a>
+  </div>
+</nav>
+
+
+<div class="container" style="margin-top: 50px;">
+  <div class="row mb-4 align-items-center">
+    <div class="col-md-8">
+      <h3>Listado de Alumnos</h3>
+    </div>
+    <div class="col-md-4 text-end">
+      <a class="btn btn-dark" href="/admin/verAlumnos/agregar">
+        <i class="fa fa-plus" aria-hidden="true"></i> Nuevo Alumno
+      </a>
+    </div>
+  </div>
+
+  {{#if alumnos.length}}
+    <table class="table tablaClases">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+          <th class="text-end">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each alumnos}}
+          <tr>
+            <td>{{id}}</td>
+            <td>{{nombre}}</td>
+            <td>{{apellido}}</td>
+            <td>{{email}}</td>
+            <td class="text-end accionesClases">
+              <a href="/admin/verAlumnos/modificar/{{id}}" class="iconoAccion">
+                <i class="fa-solid fa-pencil"></i>
+              </a>
+              <a href="javascript:void(0)" class="iconoAccion" onclick="confirmarEliminacion({{id}}, '{{nombre}}', '{{apellido}}')">
+                <i class="fa-solid fa-trash"></i>
+              </a>
+            </td>
+            </tr>
+            {{/each}}
+            </tbody>
+            </table>
+            {{else}}
+            <p class="text-center">No hay alumnos registrados.</p>
+            {{/if}}
+            </div>
+            
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+            <script>
+              function confirmarEliminacion(id, nombre, apellido) {
+                Swal.fire({
+                  title: '¿Eliminar alumno?',
+                  html: `<strong>${nombre} ${apellido}</strong> será eliminado permanentemente.`,
+                  icon: 'warning',
+                  showCancelButton: true,
+                  confirmButtonColor: '#d33',
+                  cancelButtonColor: '#3085d6',
+                  confirmButtonText: 'Sí, eliminar',
+                  cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                  if (result.isConfirmed) {
+                    window.location.href = `/admin/verAlumnos/eliminar/${id}`;
+                  }
+                });
+              }
+            </script>

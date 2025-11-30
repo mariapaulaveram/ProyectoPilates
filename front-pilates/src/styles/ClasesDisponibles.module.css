@@ -1,0 +1,61 @@
+.holder {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.tituloWrapper {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tituloInstitucional {
+  font-size: 2rem;
+  color:  #0a0a0a;
+}
+
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+}
+
+.tablaHorizontal {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.tablaHorizontal th,
+.tablaHorizontal td {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+
+.claseItem {
+  margin-bottom: 1rem;
+  background-color: #fff;
+  padding: 0.5rem;
+  border-radius: 6px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.botonInscribirse {
+  margin-top: 0.5rem;
+  padding: 0.2rem 0.6rem;
+  background-color:  #a3066a;
+  color: whitesmoke;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.botonInscribirse:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.sinClase {
+  color: #bbb;
+}
+

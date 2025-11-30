@@ -1,0 +1,36 @@
+<body>
+  <header>
+    <div class="checkin-header">
+      <img class="checkin-logo" src="/images/logo.jpg" width="100" alt="Logo" />
+      <h2 class="checkin-titulo">Registro de asistencia</h2>
+    </div>
+  </header>
+
+  <div class="checkin-wrapper">
+    <form method="POST" action="/checkin" class="checkin-form">
+      <label for="id_alumno" class="checkin-label">Número de documento</label>
+      <input type="text" id="id_alumno" name="id_alumno" placeholder="Ingresá tu número de documento" required class="checkin-input" />
+      <button type="submit" class="checkin-boton">Dar presente</button>
+    </form>
+
+    {{#if mensaje}}
+      <div class="checkin-mensaje" style="color: {{color}};">
+        {{mensaje}}
+      </div>
+    {{/if}}
+  </div>
+
+  <script>
+    // Ocultar mensaje automáticamente después de 5 segundos
+    setTimeout(() => {
+      const mensaje = document.querySelector('.checkin-mensaje');
+      if (mensaje) mensaje.style.display = 'none';
+    }, 5000);
+  </script>
+</body>
+
+
+
+
+
+

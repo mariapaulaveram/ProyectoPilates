@@ -1,0 +1,86 @@
+/* Contenedor general */
+.wrapperSaludo {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding-top: 140px; /* espacio para navbar fija */
+}
+
+/* Saludo alineado a la derecha */
+.saludoContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  gap: 1rem;
+  font-size: 1rem;
+  color: #2c2e2e;
+  font-weight: 400;
+  position: relative;
+  display: flex;
+}
+
+.saludo {
+  cursor: pointer;
+}
+
+.userIcon {
+  font-size: 1.5rem;
+  margin-left: 8px;
+  cursor: pointer;
+  color: #a3066a;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 10px;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdownMenu button {
+  background: none;
+  border: none;
+  padding: 8px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.dropdownMenu button:hover {
+  background-color: #f0f0f0;
+}
+
+
+/* Botón estilo link */
+.logout {
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 0.95rem;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+}
+
+.logout:hover {
+  color: #0c0c0c;
+}
+
+/* Sección de clases disponibles centrada */
+.presentacion {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+}
+

@@ -1,0 +1,76 @@
+/* Footer institucional oscuro para centros de bienestar.
+   - Modularizado para layouts compartidos
+   - Tipografía clara y accesible
+   - Compatible con íconos FontAwesome
+   - Pensado para armonía visual y escalabilidad */
+
+.footer {
+  background-color: #1a1a1a;
+  color: #f2f2f2;
+  padding: 2rem 1rem;
+  font-family: 'Segoe UI', sans-serif;
+  border-top: 1px solid #333;
+}
+
+.footerContent {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contactInfo,
+.social {
+  flex: 1 1 300px;
+}
+
+.contactInfo h5,
+.social h5 {
+  font-size: 1.2rem;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.contactInfo p {
+  font-size: 0.95rem;
+  margin: 0.4rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #dcdcdc;
+}
+
+.socialIcons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.socialIcons li {
+  margin: 0.4rem 0;
+}
+
+.socialIcons li a {
+  color: #dcdcdc;
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.socialIcons li a:hover {
+  color: #ffffff;
+}
+
+.footerBottom {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  opacity: 0.6;
+  color: #cccccc;
+}

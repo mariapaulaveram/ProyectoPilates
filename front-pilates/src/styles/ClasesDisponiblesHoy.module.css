@@ -1,0 +1,86 @@
+/* Contenedor principal */
+.holder {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Título */
+.tituloWrapper {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.tituloInstitucional {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Texto de carga */
+.loading {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Lista de clases */
+.listaClases {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+/* Cada clase */
+.claseItem {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 220px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.claseItem strong {
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.claseItem span {
+  display: block;
+  margin: 0.3rem 0;
+  color: #555;
+}
+
+/* Botón de inscripción */
+.botonInscribirse {
+  margin-top: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #a3066a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.botonInscribirse:hover:not(:disabled) {
+  background-color: #a91d81;
+}
+
+.botonInscribirse:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Texto si no hay clases */
+.sinClase {
+  text-align: center;
+  font-size: 1rem;
+  color: #999;
+  margin-top: 2rem;
+}

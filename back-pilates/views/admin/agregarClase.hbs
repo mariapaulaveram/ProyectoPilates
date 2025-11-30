@@ -1,0 +1,53 @@
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="/admin/clases">Ver Clases</a></li>
+    <li><a href="/admin/verAlumnos">Alumnos</a></li>
+    <li><a href="/admin/verInscriptos">Inscriptos</a></li>
+    <li><a href="/admin/inicio">Inicio</a></li>
+  </ul>
+
+  <div class="usuarioHeader">
+    <span>Hola {{persona}}!</span>
+    <a class="btn btn-teal" href="/admin/login/logout">
+      Cerrar Sesión <i class="fas fa-sign-out-alt"></i>
+    </a>
+  </div>
+</nav>
+
+<div class="container" style="margin: 100px auto">
+  <div class="row">
+    <div class="col-6 offset-3">
+      <h4>Agregar Clases</h4>
+      <form action="/admin/clases/agregar" method="post">
+      
+        <div class="row mb-3">
+          <select class="form-select" name="dia" required>
+            <option value="">Seleccionar día</option>
+            <option value="lunes">lunes</option>
+            <option value="martes">martes</option>
+            <option value="miercoles">miercoles</option>
+            <option value="jueves">jueves</option>
+            <option value="viernes">viernes</option>
+            <option value="sabado">sabado</option>
+          </select>
+        </div>
+        <div class="row mb-3">
+          <input type="time" class="form-control" placeholder="hora" name="hora">
+        </div>
+        <div class="row mb-3">
+          <input type="number" class="form-control" placeholder="cupo" name="cupo">
+        </div>
+        <div class="row mb-3">
+          <input type="number" class="form-control" placeholder="cupo disponible" name="cupo_disponible">
+        </div>
+        <div class="row mb-3">
+          <input type="text" class="form-control" placeholder="profesor" name="profesor">
+        </div>
+        <button type="submit" class="btn btn-secondary">Guardar</button>
+        </form>
+        {{#if error}}
+        <p>{{mensaje}}</p>
+        {{/if}}
+        </div>
+        </div>
+        </div>

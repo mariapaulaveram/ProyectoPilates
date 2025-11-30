@@ -1,0 +1,35 @@
+.home {
+  padding-top: 80px; /* espacio para navbar fijo */
+  background-color: #f9f9f9;
+  color: #1a1a1a;
+}
+
+/* Hero con carrusel y bienvenida */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-top: 1.5rem;
+  color: #333333;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  color: #555555;
+}
+
+/* Sección de presentación institucional */
+.presentacion {
+  padding: 2rem 1rem 4rem;
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #444444;
+}

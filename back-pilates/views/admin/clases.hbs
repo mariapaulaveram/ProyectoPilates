@@ -1,0 +1,92 @@
+
+<nav class="navbar">
+  <ul class="nav-links">
+    <li><a href="/admin/clases">Ver Clases</a></li>
+    <li><a href="/admin/verAlumnos">Alumnos</a></li>
+    <li><a href="/admin/verInscriptos">Inscriptos</a></li>
+    <li><a href="/admin/inicio">Inicio</a></li>
+  </ul>
+
+  <div class="usuarioHeader">
+    <span>Hola {{persona}}!</span>
+    <a class="btn btn-teal" href="/admin/login/logout">
+      Cerrar Sesión <i class="fas fa-sign-out-alt"></i>
+    </a>
+  </div>
+</nav>
+
+
+<div class="container" style="margin-top: 50px;">
+  <div class="row mb-4 align-items-center">
+    <div class="col-md-8">
+      <h3>Listado de Clases</h3>
+    </div>
+    <div class="col-md-4 text-end">
+      <a class="btn btn-dark" href="/admin/clases/agregar">
+        <i class="fa fa-plus" aria-hidden="true"></i> Nueva Clase
+      </a>
+    </div>
+  </div>
+
+  {{#each clasesPorDia}}
+    {{#if clases.length}}
+      <div class="row mb-4">
+        <div class="col">
+          <h4 class="diaTitulo">{{dia}}</h4>
+          <table class="table tablaClases">
+            <thead>
+              <tr>
+                <th>Hora</th>
+                <th>Cupo</th>
+                <th>Cupo Disponible</th>
+                <th>Profesor</th>
+                <th class="text-end">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each clases}}
+              <tr>
+                <td>{{hora}}</td>
+                <td>{{cupo}}</td>
+                <td>{{cupo_disponible}}</td>
+                <td>{{profesor}}</td>
+                <td class="text-end accionesClases">
+                  <a href="/admin/clases/modificar/{{id}}" class="iconoAccion">
+                    <i class="fa-solid fa-pencil"></i>
+                  </a>
+                  <a href="javascript:void(0)" class="iconoAccion"
+                    onclick="confirmarEliminacionClase({{id}}, '{{dia}}', '{{hora}}', '{{profesor}}')">
+                    <i class="fa-solid fa-trash"></i>
+                  </a>
+                
+                </td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {{/if}}
+  {{/each}}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  function confirmarEliminacionClase(id, dia, hora, profesor) {
+    Swal.fire({
+      title: '¿Eliminar clase?',
+      html: `La clase de <strong>${profesor}</strong> el <strong>${dia}</strong> a las <strong>${hora}</strong> será eliminada permanentemente.`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Sí, eliminar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = `/admin/clases/eliminar/${id}`;
+      }
+    });
+  }
+</script>
+
