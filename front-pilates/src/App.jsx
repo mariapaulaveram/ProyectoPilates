@@ -7,7 +7,7 @@ import Logueados from './paginas/Logueados';
 import Login from './paginas/Login';
 import Registro from './paginas/Registro';
 import Home from './paginas/Home';
-import PerfilAlumno from './componentes/perfilAlumno';
+import PerfilAlumno from './componentes/PerfilAlumno';
 import RecuperarContraseña from './componentes/RecuperarContraseña';
 import RestablecerContraseña from './componentes/RestablecerContraseña';
 

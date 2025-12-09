@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import ClasesDisponiblesHoy from '../componentes/ClasesDisponiblesHoy';
-import PerfilAlumno from '../componentes/perfilAlumno';
+import PerfilAlumno from '../componentes/PerfilAlumno';
 import ClasesReservadas from '../componentes/ClasesReservadas';
 import styles from '../styles/Logueados.module.css';
 import { FaUserCircle } from 'react-icons/fa';
