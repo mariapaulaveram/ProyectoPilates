@@ -7,7 +7,8 @@ function Navbar() {
       <div className={styles.navContent}>
         <div className={styles.logoGroup}>
           <Link to="/" className={styles.logo}>
-            <img src="../../public/logo.jpg" alt="Pilates" />
+             {/* <img src="../../public/logo.jpg" alt="Pilates" /> */}
+            <img src="/logo.jpg" alt="Pilates" />
           </Link>
           <h2 className={styles.logoTitle}>Pilates Studio</h2>
         </div>
