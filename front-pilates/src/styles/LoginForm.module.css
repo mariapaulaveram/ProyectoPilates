@@ -102,3 +102,17 @@
   text-decoration: none;
   font-size: 0.9rem;
 }
+
+/* 🔧 Ajuste SOLO en pantallas chicas para evitar solapamiento con footer */
+@media (max-width: 768px) {
+  .container {
+    height: auto;               /* deja crecer el contenedor */
+    min-height: calc(100vh - 120px); /* reserva espacio para navbar + footer */
+    padding: 2rem 1rem;         /* agrega respiración */
+    align-items: flex-start;    /* evita que quede pegado al footer */
+  }
+
+  .card {
+    max-width: 360px;
+    padding: 1.5rem;
+  }}

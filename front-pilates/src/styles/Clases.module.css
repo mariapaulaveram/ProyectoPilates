@@ -2,11 +2,12 @@
   width: 100%;
   border-collapse: collapse;
   text-align: center;
+  table-layout: fixed;   /* fuerza ajuste automático de columnas */
 }
 
 .tablaHorizontal th {
   background-color: #1a1a1a;
-  color:whitesmoke;
+  color: whitesmoke;
   padding: 1rem;
   font-weight: 600;
 }
@@ -16,6 +17,7 @@
   vertical-align: top;
   border: 1px solid #ddd;
   min-width: 120px;
+  word-wrap: break-word; /* corta texto largo dentro de la celda */
 }
 
 .claseItem {
@@ -25,4 +27,37 @@
 .sinClase {
   color: #aaa;
   font-style: italic;
+}
+
+/* Responsive para tablets */
+@media (max-width: 1024px) {
+  .tablaHorizontal th,
+  .tablaHorizontal td {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .tablaHorizontal {
+    width: 100%;
+    table-layout: fixed;   /* mantiene ajuste automático */
+  }
+
+  .tablaHorizontal th,
+  .tablaHorizontal td {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+    min-width: auto;       /* permite que se achique al ancho */
+    word-wrap: break-word;
+  }
+
+  .tablaHorizontal th {
+    font-weight: 500;
+  }
+
+  .claseItem {
+    margin-bottom: 0.5rem;
+  }
 }

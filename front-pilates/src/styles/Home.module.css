@@ -33,3 +33,46 @@
   line-height: 1.6;
   color: #444444;
 }
+
+/* Responsive para tablets */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 1.6rem; /* título más compacto */
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .presentacion {
+    padding: 1.5rem 1rem 3rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Responsive para móviles */
+@media (max-width: 600px) {
+  .home {
+    padding-top: 60px; /* navbar ocupa menos espacio */
+  }
+
+  .hero {
+    padding: 1.5rem 0.8rem;
+  }
+
+  .hero h1 {
+    font-size: 1.4rem;
+    margin-top: 1rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+  }
+
+  .presentacion {
+    padding: 1rem 0.8rem 2rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}

@@ -87,3 +87,55 @@
   color: white;
 }
 
+/* Tablets */
+@media (max-width: 1024px) {
+  .holder {
+    padding: 1.5rem;
+  }
+
+  .tituloDia {
+    font-size: 1.1rem;
+  }
+
+  .infoClase p {
+    font-size: 0.9rem;
+  }
+
+  .btnCancelar {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+  .holder {
+    padding: 1rem;
+  }
+
+  .cardClase {
+    flex-direction: column;   /* apila info y acciones */
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+
+  .infoClase {
+    min-width: 100%;          /* ocupa todo el ancho */
+  }
+
+  .infoClase p {
+    font-size: 0.85rem;
+  }
+
+  .acciones {
+    width: 100%;              /* acciones debajo */
+    justify-content: flex-end;
+  }
+
+  .btnCancelar {
+    width: 100%;              /* botón ancho completo en móvil */
+    text-align: center;
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+}

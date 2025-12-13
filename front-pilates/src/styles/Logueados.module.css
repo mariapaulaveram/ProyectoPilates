@@ -84,3 +84,58 @@
   padding: 2rem 1rem;
 }
 
+/* Tablets */
+@media (max-width: 1024px) {
+  .wrapperSaludo {
+    padding-top: 100px; /* navbar ocupa menos espacio */
+  }
+
+  .saludoContainer {
+    justify-content: center; /* saludo centrado en tablets */
+    font-size: 0.95rem;
+  }
+
+  .userIcon {
+    font-size: 1.3rem;
+  }
+
+  .presentacion {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+  .wrapperSaludo {
+    padding-top: 80px; /* menos espacio para navbar */
+  }
+
+  .saludoContainer {
+    flex-direction: column; /* saludo y menú uno debajo del otro */
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .userIcon {
+    font-size: 1.2rem;
+    margin-left: 0;
+  }
+
+  .dropdownMenu {
+    right: auto; /* menú se alinea con el contenedor */
+    left: 0;
+    width: 100%; /* ocupa todo el ancho en móvil */
+  }
+
+  .dropdownMenu button {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .presentacion {
+    flex-direction: column; /* clases apiladas */
+    padding: 1rem 0.5rem;
+  }
+}

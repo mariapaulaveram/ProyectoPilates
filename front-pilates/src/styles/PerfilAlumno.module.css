@@ -57,3 +57,67 @@
   text-align: center;
   transition: opacity 0.3s ease;
 }
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .perfilContainer {
+    padding: 1.5rem;
+    max-width: 90%; /* más ancho en tablets */
+  }
+
+  .header {
+    flex-direction: column; /* título y botón apilados */
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .closeButton {
+    font-size: 1rem;
+  }
+
+  .datos input {
+    font-size: 0.95rem;
+  }
+
+  .datos button {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+  .perfilContainer {
+    padding: 1rem;
+    max-width: 100%; /* ocupa todo el ancho */
+    border-radius: 6px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 1rem;
+  }
+
+  .closeButton {
+    align-self: flex-end;
+    font-size: 1rem;
+  }
+
+  .datos input {
+    font-size: 0.85rem;
+    padding: 0.4rem;
+  }
+
+  .datos button {
+    width: 100%; /* botones ancho completo en móvil */
+    margin: 0.3rem 0;
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+
+  .mensajeExito {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+}

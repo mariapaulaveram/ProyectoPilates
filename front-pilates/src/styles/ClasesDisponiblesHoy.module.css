@@ -84,3 +84,64 @@
   color: #999;
   margin-top: 2rem;
 }
+
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .holder {
+    padding: 1.5rem;
+  }
+
+  .tituloInstitucional {
+    font-size: 1.5rem;
+  }
+
+  .listaClases {
+    gap: 1rem;
+  }
+
+  .claseItem {
+    width: 45%; /* dos columnas en tablets */
+  }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+  .holder {
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .tituloInstitucional {
+    font-size: 1.3rem;
+  }
+
+  .loading {
+    font-size: 1rem;
+  }
+
+  .listaClases {
+    flex-direction: column; /* apila las clases */
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .claseItem {
+    width: 100%; /* ocupa todo el ancho en móvil */
+    max-width: 320px; /* límite para que no se estire demasiado */
+  }
+
+  .claseItem strong {
+    font-size: 1.1rem;
+  }
+
+  .claseItem span {
+    font-size: 0.9rem;
+  }
+
+  .botonInscribirse {
+    width: 100%; /* botón ancho completo en móvil */
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+}

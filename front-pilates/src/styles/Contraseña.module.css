@@ -102,3 +102,68 @@
   text-decoration: none;
   font-size: 0.9rem;
 }
+
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .contraseñaContainer {
+    height: auto; /* evita que quede demasiado alto */
+    padding: 2rem 1rem;
+  }
+
+  .contraseñaCard {
+    max-width: 90%; /* más ancho en tablets */
+    padding: 1.5rem;
+  }
+
+  .contraseñaTitle {
+    font-size: 1.1rem;
+  }
+
+  .input {
+    font-size: 0.95rem;
+  }
+
+  .button {
+    font-size: 0.95rem;
+    padding: 0.6rem;
+  }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+  .contraseñaContainer {
+    height: auto;
+    padding: 1rem;
+  }
+
+  .contraseñaCard {
+    max-width: 100%; /* ocupa todo el ancho en móvil */
+    padding: 1rem;
+    border-radius: 6px;
+  }
+
+  .contraseñaTitle {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .input {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .button {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .errorMessage {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+
+  .forgotPassword a {
+    font-size: 0.8rem;
+  }
+}
